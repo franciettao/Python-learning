@@ -1,0 +1,579 @@
+EXERCICES CORRIGÉS SUR LES BASES DE LA PROGRAMMATION
+  30-01-2020
+  ESSADDOUKI
+  Langage C, Langage java, Langage Python, MPSI, PCSI et la PTSI, MP, PSI et la TSI,
+Dans ces exercices de programmation, nous nous concentrerons sur les bases de la programmation. Après avoir terminé ces exercices, vous apprendrez la structure de base et la sémantique d'un programme et comment écrire des programmes mathématiques.
+Tous les problèmes sont résolus en utilisant les trois langages de programmation les plus utilisés comme C, Python et Java
+
+Exercice 1
+Écrivez un programme qui lit deux nombres à partir de l'utilisateur, puis calcule leur somme.
+
+Exemple :
+Données d'entrée 
+Saisir le premier nombre : 7
+Saisir le deuxième nombre : 8
+
+Données de sortie
+La somme = 15
+Corrigé
+ Langage C 
+ Python 
+ Java 
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+#include <stdio.h>
+ 
+int main()
+{
+    int nb1, nb2, somme;
+         
+    /*
+    * Lecture des deux nombres
+    */
+    printf("Saisir le premier nombre : ");
+    scanf("%d", &nb1);
+    printf("Saisir le deuxième nombre :");
+    scanf("%d", &nb2);
+         
+    /* calculer la somme */
+    somme = nb1 + nb2;
+         
+    /* Afficher le résultat */
+    printf("la somme = %d", somme);
+         
+    return 0;
+}
+Exercice 2
+Écrivez un programme qui lit la longueur et la largeur d'un rectangle en entrée et calcule ensuite son périmètre.
+
+
+Exemple :
+Données d'entrée 
+Saisir la longueur : 5
+Saisir la largeur : 10
+
+Données de sortie
+le périmètre = 30
+Corrigé
+ Langage C 
+ Python 
+ Java 
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+#include <stdio.h>
+ 
+int main()
+{
+    float longueur, largeur, perimetre;
+     
+    /*
+    * Fournir les données
+    */
+    printf("Saisir la longueur : ");
+    scanf("%f", &longueur);
+    printf("Saisir la largeur: ");
+    scanf("%f", &largeur);
+     
+    /* Calculer le perimètre */
+    perimetre = 2 * (longueur + largeur);
+     
+    /* Afficher le résultat */
+    printf("le périmètre = %f ", perimetre);
+     
+    return 0;
+}
+Exercice 3
+Écrivez un programme qui lit la longueur en centimètres en entrée et la convertit ensuite en mètres et kilomètres.
+
+Exemple :
+Données d'entrée 
+Saisir la longueur en centimètres : 1000
+
+Données de sortie
+Longueur en mètres = 10 m
+Longueur en Kilomètres = 0.01 km
+Corrigé
+ Langage C 
+ Python 
+ Java 
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+#include <stdio.h>
+ 
+int main()
+{
+    float cm, metre, km;
+ 
+    /* fournir la longueur en cm */
+    printf("Saisir la longueur en centimètres : ");
+    scanf("%f", &cm);
+ 
+    /* Convertir en m et km */
+    metre = cm / 100.0;
+    km    = cm / 100000.0;
+ 
+    printf("Longueur en mètres = %.2f m \n", metre);
+    printf("Longueur en Kilomètres = %.2f km", km);
+ 
+    return 0;
+}
+Exercice 4
+Écrivez un programme pour saisir le nombre de jours de l'utilisateur et convertissez-le en années, semaines et jours.
+
+Exemple :
+Données d'entrée 
+Saisir le nombre de jours : 373
+
+Données de sortie
+1 an(s)
+1 semaine(s)
+Jour(s) : 1 jour(s)
+Corrigé
+ Langage C 
+ Python 
+ Java 
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+#include <stdio.h>
+ 
+int main()
+{
+    int jours, annees, semaines;
+     
+    /* Fournir le nombre de jours */
+    printf("Saisir le nombre de jours : ");
+    scanf("%d", &jours);
+     
+    /* Conversion */
+    annees = (jours / 365); 
+    semaines = (jours % 365) / 7;
+    jours  = jours - ((annees * 365) + (semaines * 7));
+     
+    /* afficher le résultat */
+    printf("%d an(s) \n", annees);
+    printf("%d semaine(s) \n", semaines);
+    printf("%d jour(s)", jours);
+     
+    return 0;
+}
+Exercice 5
+Écrivez un programme qui lit deux nombres en entrée à partir de l'utilisateur et trouve ensuite leur puissance.
+
+Exemple :
+Données d'entrée 
+Saisir la base : 6
+Saisir l'exposant : 2
+
+Données de sortie
+6 ^ 2 = 36
+Corrigé
+ Langage C 
+ Python 
+ Java 
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+#include <stdio.h>
+#include <math.h> // Used for pow() function
+     
+int main()
+{
+    double base, expo, puissance;
+     
+    /* fournir la base et l'exposant */
+    printf("Saisir la base : ");
+    scanf("%lf", &base);
+    printf("Saisir l'exposant : ");
+    scanf("%lf", &expo);
+     
+    /* calculer la puissance */
+    puissance = pow(base, expo);
+     
+    printf("%.2lf ^ %.2lf = %.2lf", base, expo, puissance);
+     
+    return 0;
+}
+Exercice 6
+Écrivez un programme pour saisir un nombre et calculer sa racine carrée.
+
+Exemple :
+Données d'entrée 
+Saisir un nombre : 9
+
+Données de sortie
+La racine carrée du 9 = 3
+Corrigé
+ Langage C 
+ Python 
+ Java 
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+#include <stdio.h>
+#include <math.h>
+     
+int main()
+{
+    double nb, racine;
+     
+    /* Fournir un nombre */
+    printf("Saisir un nombre : ");
+    scanf("%lf", &nb);
+     
+    /* Calculer la racine */
+    racine = sqrt(nb);
+     
+    /* Afficher le résultat */
+    printf("La racine carrée du %.2lf = %.2lf", nb, racine);
+     
+    return 0;
+}
+Exercice 7
+Écrivez un programme pour saisir deux angles de l'utilisateur et trouver le troisième angle du triangle.
+
+
+
+ 
+
+Exemple :
+Données d'entrée 
+Angles : 50 30
+
+Données de sortie
+3ème angle = 100
+Corrigé
+ Langage C 
+ Python 
+ Java 
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+#include <stdio.h>
+ 
+int main()
+{
+    int a, b, c;
+     
+    /* Fournir les angles */
+    printf("Angles : ");
+    scanf("%d%d", &a, &b);
+     
+    /* Calculer la 3ème angle */
+    c = 180 - (a + b);
+     
+    /* Afficher le résultat */
+    printf("3ème angle = %d", c);
+     
+    return 0;
+}
+Exercice 8
+Écrivez un programme pour saisir la base et la hauteur d'un triangle et trouver la surface du triangle donné.
+
+
+
+ 
+ 
+
+Exemple :
+Données d'entrée 
+Saisir la base : 15
+Saisir la hauteur : 30
+
+Données de sortie
+La surface est = 225
+Corrigé
+ Langage C 
+ Python 
+ Java 
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+#include <stdio.h>
+ 
+int main()
+{
+    float base, hauteur, surface;
+ 
+    /* Fournir la base et la hauteur */
+    printf("Saisir la base : ");
+    scanf("%f", &base);
+    printf("Saisir la hauteur: ");
+    scanf("%f", &hauteur);
+ 
+    /* Calculer la surface */
+    surface = (base * hauteur) / 2;
+ 
+    /* Afficher le résultat */
+    printf("La surface est = %.2f", surface);
+ 
+    return 0;
+}
+Exercice 9
+Écrivez un programme pour saisir les notes de cinq matières d'un élève et calculer le total, la moyenne et le pourcentage de toutes les matières.
+
+Exemple :
+Données d'entrée 
+Saisir les notes de 5 matières : 10 11 12 13 14
+
+Données de sortie
+Total = 60
+Moyenne = 12
+Pourcentage = 12.00 %
+Corrigé
+ Langage C 
+ Python 
+ Java 
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+#include <stdio.h>
+ 
+int main()
+{
+    float mat1, mat2, mat3, mat4, mat5; 
+    float total, moyenne, pourcentage;
+     
+    /* Fournir les notes */
+    printf("Saisir les notes de 5 matières : ");
+    scanf("%f%f%f%f%f", &mat1, &mat2, &mat3, &mat4, &mat5);
+     
+    /* Calculer les résultats */
+    total = mat1 + mat2 + mat3 + mat4 + mat5;
+    moyenne = total / 5.0;
+    pourcentage = (total / 500.0) * 100;
+     
+    /* Afficher les résultats */
+    printf("Total = %.2f\n", total);
+    printf("Moyenne = %.2f\n", moyenne);
+    printf("Pourcentage = %.2f", pourcentage);
+     
+    return 0;
+}
+Exercice 10
+Écrivez un programme pour saisir le côté d'un triangle équilatéral de l'utilisateur et trouvez la surface du triangle donné.
+
+
+
+ 
+ 
+
+Exemple :
+Données d'entrée 
+Saisir le côté d'un triangle : 30
+
+Données de sortie
+La surface du triangle = 389.71
+Corrigé
+ Langage C 
+ Python 
+ Java 
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+#include <stdio.h>
+#include  <math.h> // Used for sqrt() function
+     
+int main()
+{
+    float cote, surface;
+     
+    /* Fournir le côté */
+    printf("Saisir le côté d'un triangle : ");
+    scanf("%f", &cote);
+     
+    /* Calculer la surface */
+    surface = (sqrt(3) / 4) * (cote * cote);
+     
+    /* Afficher le résultat */
+    printf("La surface du triangle =  %.2f", surface);
+     
+    return 0;
+}
